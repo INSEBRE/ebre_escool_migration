@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "589755bacc0140317b455d33d1e4eb10",
-    "content-hash": "adc8e08a0c47d9c8f32adceef0db28e5",
+    "hash": "ce86f8bce4a3845d0a34aeef62e249ac",
+    "content-hash": "9d593ae1d34d3ea149f83bb70ff4d167",
     "packages": [
         {
             "name": "acacha/admin-lte-template-laravel",
@@ -1366,6 +1366,67 @@
                 "uuid"
             ],
             "time": "2016-10-02 15:51:17"
+        },
+        {
+            "name": "scool/ebre_escool_model",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "/home/sergi/Code/scool/ebre_escool_model",
+                "reference": "110060b3b5da73f94a866ca36f34d08615150a5e",
+                "shasum": null
+            },
+            "require": {
+                "php": "~5.6|~7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0||~5.0",
+                "squizlabs/php_codesniffer": "^2.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Scool\\EbreEscoolModel\\": "src"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Scool\\EbreEscoolModel\\": "tests"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "phpunit"
+                ],
+                "check-style": [
+                    "phpcs -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests"
+                ],
+                "fix-style": [
+                    "phpcbf -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sergi Tur Badenas",
+                    "email": "sergiturbadenas@gmail.com",
+                    "homepage": "https://github.com/acacha",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Laravel model for old ebre_escool database",
+            "homepage": "https://github.com/acacha/ebre_escool_model",
+            "keywords": [
+                "Scool",
+                "ebre_escool_model"
+            ]
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -3880,7 +3941,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "acacha/admin-lte-template-laravel": 20
+        "acacha/admin-lte-template-laravel": 20,
+        "scool/ebre_escool_model": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
