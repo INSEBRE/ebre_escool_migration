@@ -1,5 +1,7 @@
 <?php
 
+use Scool\EbreEscoolModel\Providers\EbreEscoolMigratorServiceProvider;
+
 return [
 
     /*
@@ -166,6 +168,7 @@ return [
         /*
          * Package Service Providers...
          */
+        EbreEscoolMigratorServiceProvider::class,
 
         //
 
