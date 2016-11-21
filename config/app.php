@@ -168,6 +168,7 @@ return [
          */
         Scool\EbreEscoolModel\Providers\EbreEscoolMigratorServiceProvider::class,
         Scool\Curriculum\Providers\CurriculumServiceProvider::class,
+//        \Acacha\Names\Providers\NamesServiceProvider::class,
 
         //
 

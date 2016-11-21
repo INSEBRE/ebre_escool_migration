@@ -2,6 +2,7 @@
     "version": 2,
     "paths": [
         "../ebre_escool_model",
-        "../curriculum"
+        "../curriculum",
+        "../../acacha/names"
     ]
 }
