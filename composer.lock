@@ -1373,7 +1373,7 @@
             "dist": {
                 "type": "path",
                 "url": "../ebre_escool_model",
-                "reference": "485e0e3dc7c0e3cbd60213b6c451e714f4875421",
+                "reference": "68e869d15cde807f2a3de280e5ad5ea0387cb0b1",
                 "shasum": null
             },
             "require": {
