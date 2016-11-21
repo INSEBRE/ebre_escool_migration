@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => env('DB_CONNECTION', 'scool'),
 
     /*
     |--------------------------------------------------------------------------
@@ -52,19 +52,13 @@ return [
             'prefix' => '',
         ],
 
-        'mysql' => [
-            'read' => [
-                'host' => env('DB_HOST', 'localhost'),
-                'port' => 33306,
-            ],
-            'write' => [
-                'host' => 'localhost',
-                'port' => 3306,
-            ],
+        'scool' => [
+            'host' => env('DB_SCOOL_HOST', 'localhost'),
+            'port' => env('DB_SCOOL_PORT', '3306'),
             'driver' => 'mysql',
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'database' => env('DB_SCOOL_DATABASE', 'scool'),
+            'username' => env('DB_SCOOL_USERNAME', 'root'),
+            'password' => env('DB_SCOOL_PASSWORD', ''),
             'charset' => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix' => '',
@@ -72,13 +66,13 @@ return [
             'engine' => null,
         ],
 
-        'mysql2' => [
-            'host' => 'localhost',
-            'port' => 3306,
+        'ebre_escool' => [
+            'host' => env('DB_EBRE_ESCOOL_HOST', 'localhost'),
+            'port' => env('DB_EBRE_ESCOOL_PORT', '3306'),
             'driver' => 'mysql',
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'database' => env('DB_EBRE_ESCOOL_DATABASE', 'ebre_escool'),
+            'username' => env('DB_EBRE_ESCOOL_USERNAME', 'root'),
+            'password' => env('DB_EBRE_ESCOOL_PASSWORD', ''),
             'charset' => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix' => '',

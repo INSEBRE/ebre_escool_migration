@@ -11,8 +11,7 @@
         "barryvdh/laravel-ide-helper": "^2.2",
         "barryvdh/laravel-debugbar": "^2.3",
         "scool/ebre_escool_model": "dev-master",
-        "scool/curriculum": "dev-master",
-        "acacha/periods": "dev-master"
+        "scool/curriculum": "dev-master"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
