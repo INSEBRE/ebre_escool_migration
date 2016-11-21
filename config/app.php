@@ -167,6 +167,7 @@ return [
          * Package Service Providers...
          */
         Scool\EbreEscoolModel\Providers\EbreEscoolMigratorServiceProvider::class,
+        Scool\Curriculum\Providers\CurriculumServiceProvider::class,
 
         //
 
