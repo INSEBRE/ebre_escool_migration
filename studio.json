@@ -1,6 +1,7 @@
 {
     "version": 2,
     "paths": [
-        "../ebre_escool_model"
+        "../ebre_escool_model",
+        "../curriculum"
     ]
 }
