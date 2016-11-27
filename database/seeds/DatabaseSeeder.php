@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Scool\Curriculum\Database\Seeds\LawsTableSeeder;
 use Scool\Curriculum\Database\Seeds\SubmoduleTypesTableSeeder;
 
 /**
@@ -17,5 +18,6 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(UsersTableSeeder::class);
         $this->call(SubmoduleTypesTableSeeder::class);
+        $this->call(LawsTableSeeder::class);
     }
 }
