@@ -4,6 +4,6 @@
         "../ebre_escool_model",
         "../curriculum",
         "../../acacha/names",
-        "/home/sergi/Code/scool/foundation"
+        "../foundation"
     ]
 }
