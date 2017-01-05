@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "695c17f03d733ece4868175316089031",
-    "content-hash": "32089e01e8623633641a265ef75be8c0",
+    "hash": "30782adb79786ab70ed58e51dfa38116",
+    "content-hash": "b65087283382e5458247de1191d5a10e",
     "packages": [
         {
             "name": "acacha/admin-lte-template-laravel",
@@ -1788,6 +1788,68 @@
             "keywords": [
                 "Scool",
                 "ebre_escool_model"
+            ]
+        },
+        {
+            "name": "scool/enrollment",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "../enrollment",
+                "reference": "2062abbcb76aca0dd300de2f943d53ac9a378548",
+                "shasum": null
+            },
+            "require": {
+                "laravel/framework": "^5.3",
+                "php": "~5.6|~7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0||~5.0",
+                "squizlabs/php_codesniffer": "^2.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Scool\\Enrollment\\": "src"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Scool\\Enrollment\\": "tests"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "phpunit"
+                ],
+                "check-style": [
+                    "phpcs -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests"
+                ],
+                "fix-style": [
+                    "phpcbf -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sergi Tur Badenas",
+                    "email": "sergiturbadenas@gmail.com",
+                    "homepage": "https://github.com/acacha",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Enrollment module package for Scool",
+            "homepage": "https://github.com/scool/enrollment",
+            "keywords": [
+                "enrollment",
+                "scool"
             ]
         },
         {
@@ -4329,6 +4391,7 @@
         "acacha/admin-lte-template-laravel": 20,
         "scool/ebre_escool_model": 20,
         "scool/curriculum": 20,
+        "scool/enrollment": 20,
         "acacha/names": 20,
         "scool/foundation": 20,
         "acacha/l5-repository": 20,

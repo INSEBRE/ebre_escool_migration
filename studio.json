@@ -3,6 +3,7 @@
     "paths": [
         "../ebre_escool_model",
         "../curriculum",
+        "../enrollment",
         "../../acacha/names",
         "../foundation"
     ]
