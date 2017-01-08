@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "30782adb79786ab70ed58e51dfa38116",
-    "content-hash": "b65087283382e5458247de1191d5a10e",
+    "hash": "8ecdbcbe9d9f3e88224ab1a565288618",
+    "content-hash": "339fc3046a4c33767ffce380b631201c",
     "packages": [
         {
             "name": "acacha/admin-lte-template-laravel",
@@ -325,20 +325,20 @@
         },
         {
             "name": "barryvdh/laravel-debugbar",
-            "version": "v2.3.0",
+            "version": "v2.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/barryvdh/laravel-debugbar.git",
-                "reference": "0c87981df959c7c1943abe227baf607c92f204f9"
+                "reference": "65b0465e38a9524c9d5eb2dfc0389aba23090625"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/barryvdh/laravel-debugbar/zipball/0c87981df959c7c1943abe227baf607c92f204f9",
-                "reference": "0c87981df959c7c1943abe227baf607c92f204f9",
+                "url": "https://api.github.com/repos/barryvdh/laravel-debugbar/zipball/65b0465e38a9524c9d5eb2dfc0389aba23090625",
+                "reference": "65b0465e38a9524c9d5eb2dfc0389aba23090625",
                 "shasum": ""
             },
             "require": {
-                "illuminate/support": "5.1.*|5.2.*|5.3.*",
+                "illuminate/support": "5.1.*|5.2.*|5.3.*|5.4.*",
                 "maximebf/debugbar": "~1.13.0",
                 "php": ">=5.5.9",
                 "symfony/finder": "~2.7|~3.0"
@@ -375,7 +375,7 @@
                 "profiler",
                 "webprofiler"
             ],
-            "time": "2016-09-15 14:05:56"
+            "time": "2017-01-05 08:53:44"
         },
         {
             "name": "barryvdh/laravel-ide-helper",
@@ -1096,16 +1096,16 @@
         },
         {
             "name": "maximebf/debugbar",
-            "version": "v1.13.0",
+            "version": "1.13.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/maximebf/php-debugbar.git",
-                "reference": "5f49a5ed6cfde81d31d89378806670d77462526e"
+                "reference": "afee79a236348e39a44cb837106b7c5b4897ac2a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/maximebf/php-debugbar/zipball/5f49a5ed6cfde81d31d89378806670d77462526e",
-                "reference": "5f49a5ed6cfde81d31d89378806670d77462526e",
+                "url": "https://api.github.com/repos/maximebf/php-debugbar/zipball/afee79a236348e39a44cb837106b7c5b4897ac2a",
+                "reference": "afee79a236348e39a44cb837106b7c5b4897ac2a",
                 "shasum": ""
             },
             "require": {
@@ -1153,7 +1153,7 @@
                 "debug",
                 "debugbar"
             ],
-            "time": "2016-09-15 14:01:59"
+            "time": "2017-01-05 08:46:19"
         },
         {
             "name": "monolog/monolog",
@@ -1671,7 +1671,7 @@
             "dist": {
                 "type": "path",
                 "url": "../curriculum",
-                "reference": "b37115cb30c04c1695fe00b4c6b571fcd2160af9",
+                "reference": "7bab590813482d4670bc5eef4fc70237fa374811",
                 "shasum": null
             },
             "require": {
@@ -1735,7 +1735,7 @@
             "dist": {
                 "type": "path",
                 "url": "../ebre_escool_model",
-                "reference": "e276837f0db2c4b7ff1d99bcaa3bffa6e7084de2",
+                "reference": "9c7cab392b98982e340bdef0c74ecb3a95961c7b",
                 "shasum": null
             },
             "require": {
@@ -1796,7 +1796,7 @@
             "dist": {
                 "type": "path",
                 "url": "../enrollment",
-                "reference": "2062abbcb76aca0dd300de2f943d53ac9a378548",
+                "reference": "82b743c41b056f890bb9d688c07c384553f702b6",
                 "shasum": null
             },
             "require": {
@@ -1913,6 +1913,68 @@
             "keywords": [
                 "Scool",
                 "foundation"
+            ]
+        },
+        {
+            "name": "scool/timetables",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "../timetables",
+                "reference": "3d63a968945534f4545e84013638b87edefee5d1",
+                "shasum": null
+            },
+            "require": {
+                "laravel/framework": "^5.3",
+                "php": "~5.6|~7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0||~5.0",
+                "squizlabs/php_codesniffer": "^2.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Scool\\Timetables\\": "src"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Scool\\Timetables\\": "tests"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "phpunit"
+                ],
+                "check-style": [
+                    "phpcs -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests"
+                ],
+                "fix-style": [
+                    "phpcbf -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sergi Tur Badenas",
+                    "email": "sergiturbadenas@gmail.com",
+                    "homepage": "https://github.com/acacha",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Timetables module for scool",
+            "homepage": "https://github.com/scool/timetables",
+            "keywords": [
+                "scool",
+                "timetables"
             ]
         },
         {
@@ -4392,6 +4454,7 @@
         "scool/ebre_escool_model": 20,
         "scool/curriculum": 20,
         "scool/enrollment": 20,
+        "scool/timetables": 20,
         "acacha/names": 20,
         "scool/foundation": 20,
         "acacha/l5-repository": 20,

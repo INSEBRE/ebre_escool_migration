@@ -13,6 +13,7 @@
         "scool/ebre_escool_model": "dev-master",
         "scool/curriculum": "dev-master",
         "scool/enrollment": "dev-master",
+        "scool/timetables": "dev-master",
         "acacha/names": "dev-master",
         "scool/foundation": "dev-master",
         "acacha/l5-repository": "dev-master",

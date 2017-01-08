@@ -4,6 +4,7 @@
         "../ebre_escool_model",
         "../curriculum",
         "../enrollment",
+        "../timetables",
         "../../acacha/names",
         "../foundation"
     ]
