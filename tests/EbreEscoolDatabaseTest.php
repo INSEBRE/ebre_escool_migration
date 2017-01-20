@@ -146,21 +146,37 @@ class EbreEscoolDatabaseTest extends TestCase
     }
 
     /**
+     * Studies provider.
+     */
+    public function studiesProvider()
+    {
+        $studies = $this->studies();
+
+        $studiesArray = [];
+        foreach ($studies as $study) {
+            $studiesArray[$study->name] = [
+                $study
+            ];
+        }
+        return $studiesArray;
+    }
+
+    /**
      * Studies by academic period provider.
      *
      */
     public function studyModulesByAPProvider()
     {
         $studiesByAp = [];
-        foreach (\Scool\EbreEscoolModel\AcademicPeriod::all() as $academicPeriod) {
-            $activeStudies = \Scool\EbreEscoolModel\Study::activeOn($academicPeriod->id);
+//        foreach (\Scool\EbreEscoolModel\AcademicPeriod::all() as $academicPeriod) {
+            $activeStudies = \Scool\EbreEscoolModel\Study::activeOn(7);
             foreach ($activeStudies->get() as $activeStudy) {
-                $studiesByAp[$academicPeriod->name.'_'.$activeStudy->name] = [
+                $studiesByAp['2016-17'.'_'.$activeStudy->name] = [
                     $activeStudy,
-                    $academicPeriod->id
+                    7
                 ];
             }
-        }
+//        }
         return $studiesByAp;
     }
 
@@ -227,8 +243,9 @@ class EbreEscoolDatabaseTest extends TestCase
             is_numeric($code = $teacher->details()->activeOn($academicPeriodId)->first()->code)
             || ends_with($code,'S'),
             "Teacher code format is incorrect");
+        $department_id = null;
         try {
-            $department = \Scool\EbreEscoolModel\Department::findOrFail(
+            \Scool\EbreEscoolModel\Department::findOrFail(
                 $department_id = $teacher->details()->activeOn($academicPeriodId)->first()->department_id);
             $this->assertTrue(true);
         } catch (\Exception $e) {
@@ -297,22 +314,6 @@ class EbreEscoolDatabaseTest extends TestCase
     }
 
     /**
-     * Studies provider.
-     */
-    public function studiesProvider()
-    {
-        $studies = $this->studies();
-
-        $studiesArray = [];
-        foreach ($studies as $study) {
-            $studiesArray[$study->name] = [
-                $study
-            ];
-        }
-        return $studiesArray;
-    }
-
-    /**
      * Test number of studies.
      */
     public function testNumberOfStudies()
@@ -323,11 +324,10 @@ class EbreEscoolDatabaseTest extends TestCase
     }
 
     /**
-     * Test study.
+     * Test study data.
      *
      * @dataProvider studiesProvider
      * @param \Scool\EbreEscoolModel\Study $study
-     *
      */
     public function testStudyData(\Scool\EbreEscoolModel\Study $study)
     {
@@ -344,7 +344,7 @@ class EbreEscoolDatabaseTest extends TestCase
     }
 
     /**
-     * Test study.
+     * Test study modules count.
      *
      * @param Study $study
      * @param $academicPeriodId
@@ -360,6 +360,35 @@ class EbreEscoolDatabaseTest extends TestCase
         $this->assertTrue($study->courses()->count() < 21, 'Study ' . $study->name .
             '( ' . $study->id . ' )' . ' have more than 20 active modules for period: '
             . $academicPeriodId . '!');
+    }
+
+    /**
+     * Test study modules data.
+     *
+     * @param Study $study
+     * @param $academicPeriodId
+     * @dataProvider studyModulesByAPProvider
+     * @group z
+     */
+    public function testStudyModulesData(Study $study, $academicPeriodId)
+    {
+        dump($academicPeriodId . ' - ' . $study->name . '( ' . $study->id . ' )');
+        $courses = $study->coursesActiveOn($academicPeriodId)->pluck('course_id');
+        $courses_names = $study->coursesActiveOn($academicPeriodId)->pluck('course_name');
+        dump($courses->toArray());
+        dump($courses_names->toArray());
+        $modules = $study->modulesActiveOn($academicPeriodId)->orderBy('study_module_shortname')->get();
+        $i=1;
+        dump('Modules count: ' . $modules->count() );
+        foreach ($modules as $module) {
+            dump(' Module: ' . $i . ' | ' . $module->order . ' ' . $module->shortname . ' ' . $module->name . '('. $module->id .')');
+//            dd($module);
+            $this->assertTrue($i === $module->order,
+                'Order (' . $module->order . ') for module ' . $module->shortname . ' ' . $module->name . '('.  $module->id .')' .
+                '. Study: ' . $study->name . ' | Academic Period: ' . $academicPeriodId  .
+                ' . Expected order : ' .  $i);
+            $i++;
+        }
     }
 
 }
